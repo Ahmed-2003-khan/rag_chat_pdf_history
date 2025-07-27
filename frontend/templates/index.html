@@ -3,34 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Conversational RAG Interface</title>
+  <title>PDF Q&A Assistant</title>
   <link rel="stylesheet" href="static/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
   <div class="app-container">
     <header>
-      <h1>Conversational RAG Assistant</h1>
-      <p>Chat with your research PDFs powered by Groq + OpenAI</p>
+      <h1>PDF Q&A Assistant</h1>
     </header>
 
+    <!-- Upload Section -->
     <div class="card">
       <form id="uploadForm">
         <div class="form-group">
           <label for="apiKey">Groq API Key</label>
-          <input type="text" id="apiKey" name="apiKey" required />
+          <input type="text" id="apiKey" placeholder="Enter Groq API Key" required />
         </div>
         <div class="form-group">
           <label for="sessionId">Session ID</label>
-          <input type="text" id="sessionId" name="sessionId" required />
+          <input type="text" id="sessionId" placeholder="e.g., session_123" required />
         </div>
         <div class="form-group">
           <label for="pdfFile">Upload PDF(s)</label>
-          <input type="file" id="pdfFile" name="pdfFile" accept="application/pdf" multiple required />
+          <input type="file" id="pdfFile" accept="application/pdf" multiple required />
         </div>
-        <button type="submit">Upload PDFs</button>
+        <button type="submit">Upload PDF(s)</button>
       </form>
     </div>
 
+    <!-- Chat Section -->
     <div class="card">
       <div class="messages" id="messages"></div>
       <div class="chat-input">

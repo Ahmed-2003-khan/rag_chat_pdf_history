@@ -1,18 +1,21 @@
-/* style.css */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #f5f7fb;
-  margin: 0;
-  padding: 0;
+  background: #f4f6f8;
   color: #333;
+  padding: 2rem;
 }
 
 .app-container {
   max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
+  margin: auto;
 }
 
 header {
@@ -22,83 +25,92 @@ header {
 
 header h1 {
   font-size: 2rem;
-  color: #333;
-  margin-bottom: 0.5rem;
+  color: #111;
 }
 
 .card {
-  background: #fff;
-  border-radius: 12px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   padding: 1.5rem;
-  box-shadow: 0 0 12px rgba(0,0,0,0.05);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
-.form-group label {
-  margin-bottom: 0.25rem;
+label {
+  display: block;
   font-weight: 600;
+  margin-bottom: 0.4rem;
 }
 
 input[type="text"],
 input[type="file"] {
-  padding: 0.5rem;
+  width: 100%;
+  padding: 0.6rem;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
+  border-radius: 8px;
 }
 
 button {
-  background-color: #007bff;
+  padding: 0.6rem 1.2rem;
+  background: #0077cc;
   color: white;
   border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
+  border-radius: 8px;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 1rem;
+  transition: background 0.3s ease;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background: #005fa3;
 }
 
 .messages {
-  max-height: 300px;
+  max-height: 400px;
   overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
   margin-bottom: 1rem;
-  padding: 0.5rem;
-  background: #f1f1f1;
-  border-radius: 6px;
+  background: #fafafa;
 }
 
 .message {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .message .user {
   font-weight: bold;
-  color: #007bff;
+  color: #0077cc;
 }
 
 .message .assistant {
-  font-weight: bold;
-  color: #28a745;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  display: block;
+  margin-top: 0.3rem;
+  color: #333;
+  white-space: pre-line;
 }
+
+.message .user {
+  font-weight: 600;
+  color: #2c7be5;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
 
 .chat-input {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
-.chat-input input {
+.chat-input input[type="text"] {
   flex: 1;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
 }
