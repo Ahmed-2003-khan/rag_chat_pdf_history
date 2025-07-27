@@ -5,11 +5,14 @@ document.getElementById("uploadForm").addEventListener("submit", async (e) => {
 
   const apiKey = document.getElementById("apiKey").value;
   const sessionId = document.getElementById("sessionId").value;
-  const file = document.getElementById("pdfFile").files[0];
-
+  const files = document.getElementById("pdfFile").files;
   const formData = new FormData();
-  formData.append("file", file);
   formData.append("session_id", sessionId);
+
+  for (let i = 0; i < files.length; i++) {
+      formData.append("files", files[i]);
+        }
+
 
   const res = await fetch(`${apiUrl}/upload/`, {
     method: "POST",
