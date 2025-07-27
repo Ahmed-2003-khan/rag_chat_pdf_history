@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conversational RAG with PDF</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Conversational RAG Chat</h1>
+
+    <form id="uploadForm">
+      <label>Groq API Key:</label>
+      <input type="password" id="apiKey" required />
+
+      <label>Session ID:</label>
+      <input type="text" id="sessionId" value="default_session" required />
+
+      <label>Upload PDF:</label>
+      <input type="file" id="pdfFile" accept=".pdf" required />
+      <button type="submit">Upload</button>
+    </form>
+
+    <hr />
+
+    <div id="chatBox">
+      <div id="messages"></div>
+
+      <div id="chatForm">
+        <input type="text" id="userInput" placeholder="Ask a question..." />
+        <button id="askBtn">Ask</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
