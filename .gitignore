@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+env/
+venv/
+*.env
+*.log
+
+# VSCode
+.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# FastAPI static files
+app/frontend/static/__pycache__/
