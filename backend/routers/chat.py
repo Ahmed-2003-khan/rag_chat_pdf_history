@@ -2,13 +2,9 @@ from fastapi import APIRouter
 from pydantic import BaseModel
 from backend.services.rag_chain import build_chain
 from backend.services.rag_chain import get_session_history
+from backend.schemas.chat import ChatRequest
 
 router = APIRouter(prefix="/chat", tags=["Chat"])
-
-class ChatRequest(BaseModel):
-    session_id: str
-    question: str
-    groq_api_key: str
 
 @router.post("/")
 def chat_with_rag(request: ChatRequest):
