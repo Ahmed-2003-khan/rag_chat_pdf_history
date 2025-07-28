@@ -13,9 +13,10 @@
 <body>
   <div class="app-container">
     <header>
-      <h1>PDF Q&A Assistant</h1>
+      <div class="branding">
+        <h1>PDF Q&A Assistant</h1>
+      </div>
     </header>
-
     <!-- Upload Section -->
     <div class="card">
       <form id="uploadForm">
@@ -31,20 +32,26 @@
           <label for="pdfFile">Upload PDF(s)</label>
           <input type="file" id="pdfFile" accept="application/pdf" multiple required />
         </div>
+        <div class="progress-bar" id="uploadProgress" style="display:none;">
+          <div class="progress" id="progressBar"></div>
+        </div>
         <button type="submit">Upload PDF(s)</button>
+        <div id="uploadMessage"></div>
       </form>
     </div>
-
     <!-- Chat Section -->
     <div class="card">
       <div class="messages" id="messages"></div>
+      <div id="typingIndicator" class="typing-indicator" style="display:none;">
+        <img src="https://ui-avatars.com/api/?name=AI&background=0077cc&color=fff&size=32" class="avatar assistant-avatar" alt="Assistant" />
+        <span>Assistant is typing</span><span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+      </div>
       <div class="chat-input">
         <input type="text" id="userInput" placeholder="Ask a question..." />
         <button id="askBtn">Ask</button>
       </div>
     </div>
   </div>
-
   <script src="static/script.js"></script>
 </body>
 </html>
